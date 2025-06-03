@@ -1,0 +1,8 @@
+version: 2
+updates:
+  - package-ecosystem: "pip"
+    directories:
+      - "/merge-mp3-files"
+      - "/remove-background-vocals"
+    schedule:
+      interval: "daily"
