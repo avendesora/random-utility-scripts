@@ -12,9 +12,7 @@ def merge_mp3_files(
     input_folder: str = typer.Argument(
         ..., help="Path to the input folder containing MP3 files."
     ),
-    output_file: str = typer.Argument(
-        ..., help="Path to save the merged MP3 file."
-    ),
+    output_file: str = typer.Argument(..., help="Path to save the merged MP3 file."),
 ) -> None:
     """Merge multiple MP3 files into a single MP3 file.
 
@@ -26,7 +24,9 @@ def merge_mp3_files(
     output_path = Path(output_file)
 
     if not input_path.exists() or not input_path.is_dir():
-        typer.echo(f"Input folder '{input_folder}' does not exist or is not a directory.")
+        typer.echo(
+            f"Input folder '{input_folder}' does not exist or is not a directory."
+        )
         raise typer.Exit(code=1)
 
     mp3_files = sorted(input_path.glob("*.mp3"))
@@ -38,5 +38,5 @@ def merge_mp3_files(
     print(f"Merging {len(mp3_files)} MP3 files into {output_path}...")
 
     # Run ffmpeg command to merge the files
-    merge_command = f"ffmpeg -i \"concat:{'|'.join(str(mp3_file) for mp3_file in mp3_files)}\" -acodec copy \"{output_path}\""
+    merge_command = f'ffmpeg -i "concat:{"|".join(str(mp3_file) for mp3_file in mp3_files)}" -acodec copy "{output_path}"'
     subprocess.run(merge_command, shell=True)

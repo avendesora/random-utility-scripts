@@ -22,7 +22,9 @@ def remove_background_vocals(
         ..., help="Path to save the output mono audio file."
     ),
     file_type: str = typer.Option("mp3", help="Type of the audio file (default: mp3)."),
-    channel_without_vocals: str = typer.Option("left", help="Channel without vocals (default: left)."),
+    channel_without_vocals: str = typer.Option(
+        "left", help="Channel without vocals (default: left)."
+    ),
 ):
     """Remove background vocals from a stereo audio file.
 

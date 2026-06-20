@@ -6,3 +6,8 @@ updates:
       - "/remove-background-vocals"
     schedule:
       interval: "daily"
+  - package-ecosystem: "uv"
+    directories:
+      - "/convert-flac-to-mp3"
+    schedule:
+      interval: "daily"

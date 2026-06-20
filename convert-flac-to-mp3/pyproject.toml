@@ -1,0 +1,9 @@
+[project]
+name = "convert-flac-to-mp3"
+version = "0.1.0"
+description = "Converts FLAC audio files to MP3 format."
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "typer==0.26.7",
+]
