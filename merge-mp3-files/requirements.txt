@@ -1,2 +1,2 @@
 pythonbible==0.13.1
-typer==0.16.0
+typer==0.26.7
